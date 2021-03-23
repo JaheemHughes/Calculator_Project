@@ -79,7 +79,30 @@ public class MainActivity extends AppCompatActivity {
             calculator.equals();
             display.setText(calculator.getInput());
         });
-        //display.setText(calculator.getInput());
+
+        Button signButton = this.findViewById(R.id.signButton);
+        signButton.setOnClickListener(view ->{
+            calculator.signSwitch();
+            display.setText(calculator.getInput());
+        });
+
+        Button clearButton = this.findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(view ->{
+            calculator.clear();
+            display.setText(calculator.getInput());
+        });
+
+        Button decimalButton = this.findViewById(R.id.decimalButton);
+        decimalButton.setOnClickListener(view -> {
+            calculator.decimal();
+            display.setText(calculator.getInput());
+        });
+
+        Button percentButton = this.findViewById(R.id.percentSymbol);
+        percentButton.setOnClickListener(view ->{
+            calculator.percent();
+            display.setText(calculator.getInput());
+        });
     }
 
     public void handleInput(Integer number) {
